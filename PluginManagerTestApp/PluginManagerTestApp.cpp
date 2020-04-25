@@ -9,7 +9,7 @@ int main()
     PrintConsole(std::wcout, std::wstring(L"Plugin manager version=") + std::to_wstring(pluginManager.GetVersion()));
 
     std::wstring path = GetExecAppPath();
-    path += L"\\";
+
     PrintConsole(std::wcout, L"Current path=" + path);
     if (!pluginManager.LoadPlugins(path))
         return 1;

@@ -48,6 +48,7 @@ inline std::wstring GetExecAppPath()
     std::memcpy(&out[0], &fullPathExe[0], result * sizeof(wchar_t));
     std::string::size_type i = out.find_last_of(L"\\/");
     if (std::string::npos != i) out.erase(i);
+    out += L"\\";
 
     return out;
 }
