@@ -26,6 +26,5 @@ class PluginManager_v1 : public IPluginManager
 public:
     PluginManager_v1();
     virtual unsigned GetVersion() override;
-private:
-    
+
 };

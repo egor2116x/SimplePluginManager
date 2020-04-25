@@ -8,7 +8,10 @@ int main()
 
     PrintConsole(std::wcout, std::wstring(L"Plugin manager version=") + std::to_wstring(pluginManager.GetVersion()));
 
-    if (!pluginManager.LoadPlugins(L"C:\\Users\\Egor\\source\\repos\\PluginManager\\Debug\\"))
+    std::wstring path = GetExecAppPath();
+    path += L"\\";
+    PrintConsole(std::wcout, L"Current path=" + path);
+    if (!pluginManager.LoadPlugins(path))
         return 1;
 
     if (!pluginManager.InitPlugins())
